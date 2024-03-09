@@ -1,0 +1,132 @@
+$color_1: #764AF1;
+$color_2: #1E1926;
+$color_3: #161E64;
+$color_4: #FCFCFC;
+$color_5: #423FE5;
+$font-family_1:'Poppins', sans-serif;
+$background-color_1: #242424;
+$background-color_2: #1a1a1a;
+$background-color_3: #ffffff;
+$background-color_4: #f9f9f9;
+$background-color_5: #090a14;
+$border-color_1: #646cff;
+
+:root {
+    font-family: $font-family_1;
+    --main-color-one: #764AF1;
+    --heading-color: #1E1926;
+    --paragraph-color: #6B6B6B;
+    --heading-font: "Sora", sans-serif;
+    --body-font: "Poppins", sans-serif;
+    --animate-delay: 0.3s;
+}
+
+::selection {
+    color: #020c1b;
+    background: $color_5;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $background-color_3;
+	color: $color_1;
+}
+
+// ::-webkit-scrollbar {
+//     display: none;
+// }
+ul {
+    list-style-type: none ;
+}
+// svg {
+//     font-size: 30px ;
+// }
+
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: #242424;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+            90deg,
+            rgba(#1a1a1a, 0) 0,
+            rgba(#1a1a1a, 0.2) 20%,
+            rgba(#242424, 0.5) 60%,
+            rgba(#242424, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: "";
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.parent {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+
+    .btnn {
+        padding: 16px 30px;
+        border-radius: 30px;
+        background-color: $color_5;
+        color: #FCFCFC;
+        font-size: 18px;
+        font-family: Poppins;
+        font-weight: 600;
+        line-height: 18px;
+        text-transform: capitalize;
+        word-wrap: break-word;
+    }
+}
+
+.app {
+    position: relative;
+    .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 15px;
+        width: 65px;
+        height: 65px;
+        background-color: #00D95F;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 5;
+        box-shadow: #88ab8e1a  0px 10px 15px -3px, rgba(0, 0, 0, 0.244) 0px 4px 6px -2px;
+
+        svg {
+            font-size: 2.5rem;
+            color: #FCFCFC;
+            transition: .6s ease-in-out;
+        }
+
+        &:hover svg {
+            transform: scale(1.1);
+        }
+    }
+
+    .landing { 
+        position: fixed;
+        z-index: 10000000;
+        height: 100vh;
+    }
+}

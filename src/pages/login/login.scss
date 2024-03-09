@@ -1,0 +1,147 @@
+@import '../../../cssmadia.scss';
+
+.login {
+    height:100vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md {
+        flex-direction: column;
+        justify-content: center;
+        gap: 42px;
+    }
+
+    .left {
+    order: 2;
+      width: calc(100% /1.5);
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      
+      @include md {
+        order: 0;
+        width: 100%;
+        padding-top: 32px;
+        padding-bottom: 20px;
+      }
+        img {
+            user-select: none;
+            color: #222;
+           object-fit: cover;
+           width: 50%;
+           height: 100%; 
+           border-radius: 20px;
+           animation: sun-rise 5s infinite;
+           filter: grayscale(1);
+        }
+    }
+
+    .container {
+
+        .right {
+        padding-top: 12px;
+        padding-bottom: 12px;
+            .content {
+                display: flex;
+                flex-direction: column;
+                 
+                .title {
+                    font-size: var(--h2-font-size);
+                    font-weight: var(--font-bold);
+                    color: #222;
+                }
+                .register_row {
+                    margin-top: 0px;
+                    color: #999;
+                    display: flex;
+                    gap: 8px;
+                    a {
+                        font-weight: 700;
+                        color: var(--green-color);
+                    }
+                }
+                .box_alert {
+                    background-color: #3ee8c328;
+                    color: #444;
+                    display: flex;
+                    gap: 8px;
+                    padding: 6px 8px;
+                    margin-top: 32px;
+                    border-radius: 10px;
+
+                    span {
+                        margin-right: 6px;
+                        font-weight: bold;
+                    }
+                }
+            }   
+            form {
+                margin-top: 20px;
+                .inputandlable {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 16px;
+                    
+                    label {
+                        position: absolute;
+                        background-color: rgba(255, 255, 255, 0);
+                        font-size: 14px;
+                        top: -15px;
+                        right: 12px;
+                        font-weight: 600;
+                    }
+
+                    input {
+                        border: 2px solid #eee;
+                        outline: none;
+                        border-radius: 6px;
+                        padding: 4px 10px;
+                        width: 100%;
+                        
+                    }
+
+                }
+                .forgotPass_text {
+                    margin-top: 8px;
+                    font-size: var(--small-font-size);
+                    text-decoration: underline;
+                    font-weight: 600;
+                    margin-bottom: 16px;
+                }
+                .button {
+                    width: 100%;
+                    justify-content: center;
+                    border-radius: 6px;
+                    background-color: var(--green-color);
+                    background-color: #222;
+                    color: #f9f9f9;
+                    font-weight: 900;
+                    border: none;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                    &:hover {
+                        gap: 12px;
+                    }
+                }
+
+            } 
+        }
+    }
+}
+
+
+
+@keyframes sun-rise {
+    0% {
+      /* pushes the sun down past the viewport */
+      transform: translateY(0px);
+    }
+    50% {
+      /* returns the sun to its default position */
+      transform: translateY(30px);
+    }
+  }

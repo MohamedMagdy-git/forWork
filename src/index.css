@@ -1,0 +1,304 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --bg-gradient1 :linear-gradient(to right, #7fc5d3, #ffffff);
+  --bg-gradient1 :linear-gradient(to right, #ebd9ba, #ffffff);
+  --bg-gradient1 :linear-gradient(to right, #8593c3, #ffffff);
+  --title-color: #0e2431;
+  --title-color-dark: #11111148;
+  --text-color-dark: #4C514C;
+  --text-color: #757575;
+  --body-color: #fafafa;
+  --container-color: #fff;
+  --gray-color:  #f5f5f5;
+  --gradinterest-color: linear-gradient(159deg, #A6CF98 0%, #B6D8AA 43%, #CCE4C3 100%);
+  --dark-green-color : #6b8e23;
+  --green-color : #3ee8c4;
+  --card-color : #D0E7D2;
+  --filed-green: #e6eee3;
+  --bg-color: #88AB8E;
+  --light-Green-color : #A6CF98;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Cairo', sans-serif;
+
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection{
+  color: #fafafa;
+  background-color: var(--green-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  transition: .2s ease;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  /* height: 1000px; */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer !important;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  display: none;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4rem 0 2rem;
+}
+.title_col {
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: start;
+  font-weight: var(--font-bold);
+}
+.helf_line {
+  height: 4px;
+  margin-top: 8px;
+  background-color: var(--bg-color);
+  width: 40%;
+  margin-bottom: 2.5rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: start;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background-color: #F3FAEE;
+  color: var(--green-color);
+  font-size: var(--small-font-size);
+  border: 1px solid var(--light-Green-color);
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: capitalize;
+  cursor: pointer !important;
+  transition: .3s ease;
+}
+
+.Basic_button {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background-color: #88AB8E;
+  color: #FCFCFC;
+  font-size: var(--small-font-size);
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: capitalize;
+  cursor: pointer !important;
+  transition: .3s ease;
+}
+
+.button:hover {
+  border-color: var(--light-Green-color);
+  box-shadow: 1px 2px 16px 0px #F3FAEE;
+  background-color: #f3faee85;
+  cursor: pointer;
+}
+
+.Basic_button:hover {
+  box-shadow: 1px 2px 16px 0px #0e243139;
+  cursor: pointer;
+}
+
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100cqh;
+  background-color: #c3e8dc;
+}
+.landingImg {
+  display: flex;
+
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1060px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  .button {
+    padding: .5rem 1.3rem;
+  }
+
+  .button__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+
+  .section {
+    padding: 2rem 0 4rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  :root {
+    --big-font-size: 2.25rem;
+  }
+
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
